@@ -2,9 +2,12 @@ const initialPrice = document.querySelector("#initial-price")
 const stocksQuantity = document.querySelector("#stocks-quantity")
 const currentPrice = document.querySelector("#current-price")
 const checkBtn = document.querySelector("#check-btn")
-
+const outputBox = document.querySelector("#output-box")
 function clickHandler(){
-    
+    const ip = Number(initialPrice.value) ;
+    const qty = Number (stocksQuantity.value);
+    const crr = Number(currentPrice.value);
+    calculateProfitAndLoss(ip,qty,crr)
 }
 
 function calculateProfitAndLoss(initial,quantity,current){
@@ -12,16 +15,16 @@ function calculateProfitAndLoss(initial,quantity,current){
         // code for loss
         var loss = (initial-current) * quantity;
         var lossPercentage = (loss/initial) * 100;
-        console.log('hey the loss is ' + loss + ' and the percent is ' + lossPercentage + '%')
+      outputBox.innerText ='hey the loss is ' + loss + ' and the percent is ' + lossPercentage + '%'
     }else if(current > initial){
         // code for profit
         var profit = (current-initial) * quantity;
         var profitPercentage = (profit/current) * 100;
-        console.log('Hurray!! Your Profit is ' + profit + ' and the percent is ' + profitPercentage +'%')
+        outputBox.innerText ='Hurray!! Your Profit is ' + profit + ' and the percent is ' + profitPercentage +'%'
         
     }else{
         // the rest of code
-        console.log('Unfortunetly No Profit And fortuneatly No Loss!')
+        outputBox.innerText ='Unfortunetly No Profit And fortuneatly No Loss!'
     }
 }
 calculateProfitAndLoss(10,5,10)
