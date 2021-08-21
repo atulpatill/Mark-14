@@ -28,7 +28,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
 
     } else {
         // the rest of code
-        outputBox.innerText = 'Fortuneatly No Loss!! Unfortunetly No Profit !!'
+        outputBox.innerText = 'Fortunatly No Loss!! Unfortunatly No Profit !!'
         outputBox.style.color = "purple"
     }
 
