@@ -18,7 +18,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
         var loss = (initial - current) * quantity;
         var lossPercentage = (loss / initial) * 100;
         outputBox.innerText = 'Ohh!! the loss is ' + loss + ' and the percent is ' + lossPercentage + '%'
-        outputBox.style.color = "Red"
+        outputBox.style.color = "pink"
         outputBox.style.fontSize ="25px";
       
     } else if (current > initial) {
